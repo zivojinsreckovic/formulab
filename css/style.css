@@ -1,0 +1,695 @@
+/********** Template CSS **********/
+:root {
+    --primary: #F3BD00;
+    --secondary: #757575;
+    --light: #F3F6F8;
+    --dark: #0C2B4B;
+}
+html {
+    scroll-behavior: smooth;
+}
+.py-6 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+.my-6 {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-outline-primary:hover {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+
+/*** Navbar ***/
+.navbar.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+.navbar .navbar-brand,
+.navbar a.btn {
+    height: 80px
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 25px 0;
+    color: var(--dark);
+    font-weight: 500;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar .navbar-nav {
+        border-top: 1px solid #EEEEEE;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+/*** Header ***/
+/* Hero Section - 100vh on Mobile */
+.hero-section {
+    height: 100vh;
+    min-height: 100vh;
+}
+
+.hero-section > .position-relative {
+    height: 100%;
+    min-height: 100%;
+}
+
+.hero-section img {
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(0, 0, 0, .75);
+    z-index: 1;
+    padding: 2rem 1rem;
+    overflow-y: auto;
+}
+
+.carousel-caption .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-caption .row {
+    width: 100%;
+}
+
+/* Hero Section Responsive Styles */
+.hero-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.hero-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.hero-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+@media (min-width: 576px) {
+    .hero-title {
+        font-size: 2.25rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-text {
+        font-size: 1rem;
+    }
+    
+    .hero-btn {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        height: auto;
+        min-height: auto;
+    }
+    
+    .hero-section > .position-relative {
+        height: auto;
+        min-height: auto;
+    }
+    
+    .hero-section img {
+        height: auto;
+        min-height: 500px;
+    }
+    
+    .carousel-caption {
+        padding: 3rem 2rem;
+        overflow-y: visible;
+    }
+    
+    .carousel-caption .container {
+        height: auto;
+    }
+    
+    .hero-title {
+        font-size: 2.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .hero-text {
+        font-size: 1.05rem;
+    }
+    
+    .hero-btn {
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .carousel-caption {
+        padding: 4rem 2rem;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .hero-text {
+        font-size: 1.1rem;
+    }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 15%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--primary);
+    border: 10px solid var(--primary);
+}
+
+@media (max-width: 768px) {
+    #header-carousel .carousel-item {
+        position: relative;
+        min-height: 450px;
+    }
+    
+    #header-carousel .carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.page-header {
+    background: linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(../img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    min-height: 100vh;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 2rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.page-header .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.page-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1rem !important;
+}
+
+.page-header p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+@media (min-width: 576px) {
+    .page-header {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+    }
+    
+    .page-header h1 {
+        font-size: 2.25rem;
+    }
+    
+    .page-header p {
+        font-size: 1.05rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .page-header {
+        height: auto;
+        min-height: auto;
+        background-attachment: scroll;
+        overflow-y: visible;
+        padding-top: 5rem !important;
+        padding-bottom: 5rem !important;
+        margin-bottom: 3rem !important;
+    }
+    
+    .page-header .container {
+        height: auto;
+    }
+    
+    .page-header h1 {
+        font-size: 2.75rem;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .page-header p {
+        font-size: 1.15rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .page-header {
+        padding-top: 6rem !important;
+        padding-bottom: 6rem !important;
+    }
+    
+    .page-header h1 {
+        font-size: 3.5rem;
+    }
+    
+    .page-header p {
+        font-size: 1.25rem;
+    }
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    color: #999999;
+}
+
+
+/*** Facts ***/
+@media (min-width: 991.98px) {
+    .facts {
+        position: relative;
+        margin-top: -75px;
+        z-index: 1;
+    }
+}
+
+
+/*** Courses ***/
+.courses {
+    min-height: 100vh;
+    background: linear-gradient(rgba(255, 255, 255, .9), rgba(255, 255, 255, .9)), url(../img/carousel-1.jpg) center center no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.courses-item .courses-overlay {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .5);
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+.courses-item:hover .courses-overlay {
+    height: 100%;
+    opacity: 1;
+}
+
+
+/*** Team ***/
+.team-items {
+    margin: -.75rem;
+}
+
+.team-item {
+    padding: .75rem;
+}
+
+.team-item::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    background: #FFFFFF;
+    transition: .5s;
+    z-index: -1;
+}
+
+.team-item:hover::after {
+    height: 100%;
+    background: var(--primary);
+}
+
+.team-item .team-social {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .75);
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+.team-item:hover .team-social {
+    height: 100%;
+    opacity: 1;
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel .owl-dots {
+    height: 40px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: 2px solid var(--primary);
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+}
+
+.testimonial-carousel .owl-item img {
+    width: 150px;
+    height: 150px;
+}
+
+
+/*** Footer ***/
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: var(--light);
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--light);
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    color: var(--primary);
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.copyright {
+    background: #092139;
+}
+
+.copyright a {
+    color: var(--primary);
+}
+
+.copyright a:hover {
+    color: var(--light);
+}
+
+/*** FAQ Modern Section ***/
+#faq-section {
+    background: #fff;
+}
+
+#faq-section .faq-modern-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+#faq-section .faq-modern-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+#faq-section .faq-question {
+    width: 100%;
+    padding: 1.5rem 1.75rem;
+    background: transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+#faq-section .faq-question:hover {
+    background: var(--light);
+}
+
+#faq-section .faq-question:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#faq-section .faq-question-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark);
+    line-height: 1.5;
+    flex: 1;
+    padding-right: 1.5rem;
+}
+
+#faq-section .faq-icon {
+    color: var(--primary);
+    font-size: 0.875rem;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+#faq-section .faq-question:not(.collapsed) .faq-icon {
+    transform: rotate(180deg);
+}
+
+#faq-section .accordion-collapse {
+    transition: all 0.3s ease;
+}
+
+#faq-section .faq-answer {
+    padding: 0 1.75rem 1.5rem 1.75rem;
+    color: var(--secondary);
+    font-size: 1rem;
+    line-height: 1.75;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 991.98px) {
+    #faq-section .faq-modern-card {
+        margin-bottom: 1.25rem;
+    }
+    
+    #faq-section .faq-question {
+        padding: 1.25rem 1.5rem;
+    }
+    
+    #faq-section .faq-question-text {
+        font-size: 1rem;
+        padding-right: 1rem;
+    }
+    
+    #faq-section .faq-answer {
+        padding: 0 1.5rem 1.25rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    #faq-section .faq-question {
+        padding: 1rem 1.25rem;
+    }
+    
+    #faq-section .faq-question-text {
+        font-size: 0.95rem;
+        padding-right: 0.75rem;
+    }
+    
+    #faq-section .faq-answer {
+        padding: 0 1.25rem 1rem 1.25rem;
+        font-size: 0.9rem;
+    }
+}
